@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<wsdl:definitions name="login"
-    targetNamespace="http://localhost:8000/promise"
-    xmlns="http://localhost:8000/promise"
+<wsdl:definitions name="auth"
+    targetNamespace="http://localhost:3000/promise"
+    xmlns="http://localhost:3000/promise"
     xmlns:http="http://schemas.xmlsoap.org/wsdl/http/"
     xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
     xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
@@ -13,10 +13,10 @@
     </wsdl:message>
 
     <wsdl:message name="loginResponse">
-        <wsdl:part name="loginResponse" type="xs:string"/>
+        <wsdl:part name="formatedText" type="xs:string"/>
     </wsdl:message>
 
-    <wsdl:portType name="lognBank">
+    <wsdl:portType name="loginBank">
 
         <wsdl:operation name="memorize">
             <wsdl:input message="loginRequest"/>
@@ -42,7 +42,7 @@
 
     <wsdl:service name="loginService">
         <wsdl:port binding="loginServiceBinding" name="loginPort">
-            <soap:address location="http://localhost:3000/login"/>
+            <soap:address location="http://localhost:3000/auth"/>
         </wsdl:port>
     </wsdl:service>
 
